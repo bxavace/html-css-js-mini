@@ -1,0 +1,68 @@
+/* Min-width is the minimum width at which a style will START to be applied. (Have to be ordered from smallest to largest to work properly, regular styles first). Put another way: If device width is greater than or equal to..., then apply some specific styles. With min-width, styles START and continue forever as long as min-width is met, and no max-width is specified.
+
+Max-width is the maximum width at which a style will continue to be applied. After that, the style will STOP being applied. (Have to be ordered from largest to smallest to work properly, regular styles first). Put another way: If device width is less than or equal to..., then apply specific styles. Styles STOP as soon as width greater than max-width is hit. */
+
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0px;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
+    display: none;
+  }
+} ;
