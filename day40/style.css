@@ -83,7 +83,7 @@ body {
 
 .box::before {
   content: "";
-  background-color: #d46c1d; 
+  background-color: #d46c1d;
   position: absolute;
   bottom: -15px;
   left: 8px;
